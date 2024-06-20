@@ -28,17 +28,15 @@ if __name__ == "__main__":
 
         user_option = input("masukan pilihan (number)")
 
-        print("\n========================\n")
 
         match user_option:
-            case "1": print("reading data")
+            case "1": CRUD.read_consol()
             case "2": print("create data")
             case "3": print("update data")
             case "4": print("delete data")
 
-        print("\n=========================\n")
-        is_isdone = input("Apakah sudah selesai (y/n): ")
-        if is_isdone == "y":
+        is_isdone = input("Apakah lanjut menambah anime (y/n): ")
+        if is_isdone == "n" or "N":
             break
 print("Program end arigatoooou")
         

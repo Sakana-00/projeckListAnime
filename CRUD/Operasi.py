@@ -24,5 +24,14 @@ def creat_first_data():
                 file.write(data_str)
         except: 
             print("udah lah gagal bos")
+def read():
+
+        try: 
+             with open(Database.DB_NAME, "r") as file:
+                  content = file.readlines()
+                  return content
+        except:
+             print("membaca data base error")
+             return False
 
        
