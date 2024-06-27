@@ -3,11 +3,35 @@ from . import  Database
 from .Util import random_string
 import time
 
+def creat(tahun,judul,penulis):
+    data = Database.TEMPLATE.copy()
+
+    data["pk"] = random_string(6)
+    data["date_time"] = time.strftime("%Y-%m-%d-%H-%M-%S%z",time.gmtime())
+    data["penulis"] = penulis + Database.TEMPLATE["penulis"][len(penulis):]
+    data["judul"] = judul + Database.TEMPLATE["judul"][len(judul):]
+    data["tahun"] = tahun
+
+    data_str = f'{data["pk"]},{ data["date_time"]},{ data["penulis"]},{data["judul"]},{data["tahun"]}\n'
+    try:
+        with open(Database.DB_NAME, "a", encoding="utf-8") as file:
+            file.write(data_str)
+    except:
+         print("sulit menambahkan data, gagal bos")
+    
 def creat_first_data():
 
         penulis = input("penulis: ")
         judul = input("judul: ")
-        tahun = input("tahun: ")
+        while(True):    
+            try:
+                tahun = int(input("masukan tahum\t:"))
+                if len(str(tahun)) == 4:
+                    break
+                else: 
+                    print("angka harus berjumlah 4")
+            except:
+                print("masukan angka bukan huruf, coba lagi")
 
         data = Database.TEMPLATE.copy()
 

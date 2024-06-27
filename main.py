@@ -26,17 +26,17 @@ if __name__ == "__main__":
         print(f"3.Update Data")
         print(f"4.Delete Data\n")
 
-        user_option = input("masukan pilihan (number)")
+        user_option = input("masukan pilihan (number): ")
 
 
         match user_option:
-            case "1": CRUD.read_consol()
-            case "2": print("create data")
+            case "1": CRUD.read_console()
+            case "2": CRUD.creat_console()
             case "3": print("update data")
             case "4": print("delete data")
 
         is_isdone = input("Apakah lanjut menambah anime (y/n): ")
-        if is_isdone == "n" or "N":
+        if is_isdone == "n":
             break
 print("Program end arigatoooou")
         

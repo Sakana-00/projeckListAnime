@@ -1,7 +1,8 @@
 {
     "editor.minimap.enabled": false,
     "editor.fontFamily": "Consolas, 'Courier New', monospace",
-    "editor.fontSize": 16,
+    "editor.fontSize": 15,
     "files.autoSave": "afterDelay",
-    "editor.tabSize": 4,
+    "editor.tabSize": 2,
+    "editor.indentSize": "tabSize"
 }

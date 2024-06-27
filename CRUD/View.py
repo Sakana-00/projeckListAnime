@@ -1,6 +1,25 @@
 from . import Operasi
 
-def read_consol():
+def creat_console():
+    print("\n\n" + "="*100)
+    print("#isi data anime\n")
+    penulis = input("masukan nama penulis\t:")
+    judul = input("masukan judul anime\t:")
+    while(True):    
+        try:
+            tahun = int(input("masukan tahum\t:"))
+            if len(str(tahun)) == 4:
+                break
+            else: 
+                print("angka harus berjumlah 4")
+        except:
+            print("masukan angka bukan huruf, coba lagi")
+
+    Operasi.creat(tahun,judul,penulis)
+    print("\n#berikut adalah ata baru anda")
+    read_console()
+
+def read_console():
     data_file = Operasi.read()
     index = "No"
     judul = "Judul"
